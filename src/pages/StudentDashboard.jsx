@@ -8,7 +8,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch(`${API}reports`);
+        const res = await fetch(`${API}/api/reports`);
         const data = await res.json();
         setReports(data);
       } catch (err) {

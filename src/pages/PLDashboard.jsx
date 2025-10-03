@@ -14,14 +14,14 @@ export default function PLDashboard({ user }) {
 
   // Fetch courses
   const loadCourses = async () => {
-    const res = await fetch(`${API}courses`);
+    const res = await fetch(`${API}/api/courses`);
     const data = await res.json();
     setCourses(data);
   };
 
   // Fetch reports
   const loadReports = async () => {
-    const res = await fetch(`${API}reports`);
+    const res = await fetch(`${API}/api/reports`);
     const data = await res.json();
     setReports(data);
   };
