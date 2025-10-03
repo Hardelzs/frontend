@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API = "https://backend-omega-orcin.vercel.app/";
+const API = import.meta.env.VITE_API_URL;
 
 export default function StudentDashboard() {
   const [reports, setReports] = useState([]);

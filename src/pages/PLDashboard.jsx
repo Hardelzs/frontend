@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const API = "https://backend-omega-orcin.vercel.app/";
+const API = import.meta.env.VITE_API_URL;
 
 export default function PLDashboard({ user }) {
   const [courses, setCourses] = useState([]);

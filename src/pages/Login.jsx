@@ -2,7 +2,7 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const API = "https://backend-omega-orcin.vercel.app/";
+const API = import.meta.env.VITE_API_URL;
 
 export default function Login({ onLogin }) {
   const [email,setEmail] = useState('');
@@ -11,7 +11,7 @@ export default function Login({ onLogin }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`${API}login`, {
+    const res = await fetch(`${API}/api/auth/login`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ email, password })
