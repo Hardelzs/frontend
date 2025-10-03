@@ -13,7 +13,7 @@ export default function Register({ onRegister }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`${API}register`, {
+    const res = await fetch(`${API}/api/auth/register`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ name, email, password, role })
