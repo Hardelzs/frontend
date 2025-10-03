@@ -11,7 +11,7 @@ export default function PRLDashboard({ user }) {
   useEffect(()=>{ fetchReports(); },[]);
 
   const fetchReports = async () => {
-    const res = await fetch(`${API}reports`);
+    const res = await fetch(`${API}/reports`);
     const data = await res.json();
     setReports(data);
   };
