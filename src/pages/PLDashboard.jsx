@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+const API = "https://backend-omega-orcin.vercel.app/";
+
 export default function PLDashboard({ user }) {
   const [courses, setCourses] = useState([]);
   const [reports, setReports] = useState([]);
@@ -12,14 +14,14 @@ export default function PLDashboard({ user }) {
 
   // Fetch courses
   const loadCourses = async () => {
-    const res = await fetch("https://backend-omega-orcin.vercel.app/courses");
+    const res = await fetch(`${API}courses`);
     const data = await res.json();
     setCourses(data);
   };
 
   // Fetch reports
   const loadReports = async () => {
-    const res = await fetch("https://backend-omega-orcin.vercel.app/reports");
+    const res = await fetch(`${API}reports`);
     const data = await res.json();
     setReports(data);
   };
@@ -31,7 +33,7 @@ export default function PLDashboard({ user }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://backend-omega-orcin.vercel.app/courses", {
+    await fetch(`${API}courses`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

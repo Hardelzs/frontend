@@ -1,6 +1,9 @@
 
 import React, {useState, useEffect} from 'react';
 
+const API = "https://backend-omega-orcin.vercel.app/";
+
+
 export default function PRLDashboard({ user }) {
   const [reports, setReports] = useState([]);
   const [feedbacks, setFeedbacks] = useState({});
@@ -8,7 +11,7 @@ export default function PRLDashboard({ user }) {
   useEffect(()=>{ fetchReports(); },[]);
 
   const fetchReports = async () => {
-    const res = await fetch('https://backend-omega-orcin.vercel.app/reports');
+    const res = await fetch(`${API}reports`);
     const data = await res.json();
     setReports(data);
   };

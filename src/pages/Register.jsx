@@ -2,6 +2,8 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
+const API = "https://backend-omega-orcin.vercel.app/";
+
 export default function Register({ onRegister }) {
   const [name,setName] = useState('');
   const [email,setEmail] = useState('');
@@ -11,7 +13,7 @@ export default function Register({ onRegister }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await fetch('https://backend-omega-orcin.vercel.app/register', {
+    const res = await fetch(`${API}register`, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ name, email, password, role })

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
+const API = "https://backend-omega-orcin.vercel.app/";
+
 export default function StudentDashboard() {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch("https://backend-omega-orcin.vercel.app/reports");
+        const res = await fetch(`${API}reports`);
         const data = await res.json();
         setReports(data);
       } catch (err) {
