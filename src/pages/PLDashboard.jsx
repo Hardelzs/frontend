@@ -12,14 +12,14 @@ export default function PLDashboard({ user }) {
 
   // Fetch courses
   const loadCourses = async () => {
-    const res = await fetch("http://localhost:5001/api/courses");
+    const res = await fetch("https://backend-omega-orcin.vercel.app/courses");
     const data = await res.json();
     setCourses(data);
   };
 
   // Fetch reports
   const loadReports = async () => {
-    const res = await fetch("http://localhost:5001/api/reports");
+    const res = await fetch("https://backend-omega-orcin.vercel.app/reports");
     const data = await res.json();
     setReports(data);
   };
@@ -31,7 +31,7 @@ export default function PLDashboard({ user }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5001/api/courses", {
+    await fetch("https://backend-omega-orcin.vercel.app/courses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),

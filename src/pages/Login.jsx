@@ -9,7 +9,7 @@ export default function Login({ onLogin }) {
 
   const submit = async (e) => {
     e.preventDefault();
-    const res = await fetch('https://backend-omega-orcin.vercel.app/', {
+    const res = await fetch('https://backend-omega-orcin.vercel.app/login', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ email, password })

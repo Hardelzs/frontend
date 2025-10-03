@@ -6,7 +6,7 @@ export default function StudentDashboard() {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const res = await fetch("http://localhost:5001/api/reports");
+        const res = await fetch("https://backend-omega-orcin.vercel.app/reports");
         const data = await res.json();
         setReports(data);
       } catch (err) {
